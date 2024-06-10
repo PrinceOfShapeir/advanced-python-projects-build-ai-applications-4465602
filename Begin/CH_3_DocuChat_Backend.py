@@ -43,24 +43,24 @@ if os.name == "nt":  # Windows
     load_dotenv(".secrets.env")
 
 # Retrieve and assign environment variables to variables
-# S3_KEY = os.environ.get("S3_KEY")  # AWS S3 access key
-# S3_SECRET = os.environ.get("S3_SECRET")  # AWS S3 secret access key
-# S3_BUCKET = os.environ.get("S3_BUCKET")  # AWS S3 bucket name
-# S3_REGION = os.environ.get("S3_REGION")  # AWS S3 region
-# OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")  # OpenAI API key
-# MONGO_URL = os.environ.get("MONGO_URL")  # MongoDB connection URL
-# S3_PATH = os.environ.get("S3_PATH")  # AWS S3 pathi
+S3_KEY = os.environ.get("S3_KEY")  # AWS S3 access key
+S3_SECRET = os.environ.get("S3_SECRET")  # AWS S3 secret access key
+S3_BUCKET = os.environ.get("S3_BUCKET")  # AWS S3 bucket name
+S3_REGION = os.environ.get("S3_REGION")  # AWS S3 region
+OPENAI_API_KEY = os.environ.get("API_KEY")  # OpenAI API key
+#MONGO_URL = os.environ.get("MONGO_URL")  # MongoDB connection URL
+#S3_PATH = os.environ.get("S3_PATH")  # AWS S3 pathi
 
-os.environ['OPENAI_API_KEY']="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"
-S3_KEY=""
-S3_SECRET=""
-S3_BUCKET=""
-S3_REGION=""
-S3_PATH=""
+#os.environ['OPENAI_API_KEY']="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"
+#S3_KEY=""
+#S3_SECRET=""
+#S3_BUCKET=""
+#S3_REGION=""
+#S3_PATH=""
 
 
 try:
-    MONGO_URL="mongodb+srv://admin:admin@cluster0.jyupp.mongodb.net/?retryWrites=true&w=majority&ssl=true"
+    MONGO_URL="mongodb://localhost:27017/test"
 
     # Connect to the MongoDB using the provided MONGO_URL
     client = pymongo.MongoClient(MONGO_URL, uuidRepresentation="standard")
@@ -265,7 +265,7 @@ app.add_middleware(
 aws_s3 = boto3.Session(
     aws_access_key_id=S3_KEY,  # Set the AWS access key ID
     aws_secret_access_key=S3_SECRET,  # Set the AWS secret access key
-    region_name="us-east-2",  # Set the AWS region
+    region_name="us-east-1",  # Set the AWS region
 )
 
 

@@ -1,7 +1,7 @@
 import requests
 import json
 
-BACKEND_URL="https://psychic-adventure-p4w6pqpgxw9c6gp6-8000.app.github.dev"
+BACKEND_URL="http://127.0.0.1:8000/"
 
 def chat(user_input, data, session_id=None):
     """
